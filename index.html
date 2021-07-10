@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <title>Quiz It</title>
+  <style>
+    body {
+      background-color: #2e393b;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='385' height='192.5' viewBox='0 0 1600 800'%3E%3Cpath fill='%238b87ff' d='M1102.5 734.8c2.5-1.2 24.8-8.6 25.6-7.5.5.7-3.9 23.8-4.6 24.5C1123.3 752.1 1107.5 739.5 1102.5 734.8zM1226.3 229.1c0-.1-4.9-9.4-7-14.2-.1-.3-.3-1.1-.4-1.6-.1-.4-.3-.7-.6-.9-.3-.2-.6-.1-.8.1l-13.1 12.3c0 0 0 0 0 0-.2.2-.3.5-.4.8 0 .3 0 .7.2 1 .1.1 1.4 2.5 2.1 3.6 2.4 3.7 6.5 12.1 6.5 12.2.2.3.4.5.7.6.3 0 .5-.1.7-.3 0 0 1.8-2.5 2.7-3.6 1.5-1.6 3-3.2 4.6-4.7 1.2-1.2 1.6-1.4 2.1-1.6.5-.3 1.1-.5 2.5-1.9C1226.5 230.4 1226.6 229.6 1226.3 229.1zM33 770.3C33 770.3 33 770.3 33 770.3c0-.7-.5-1.2-1.2-1.2-.1 0-.3 0-.4.1-1.6.2-14.3.1-22.2 0-.3 0-.6.1-.9.4-.2.2-.4.5-.4.9 0 .2 0 4.9.1 5.9l.4 13.6c0 .3.2.6.4.9.2.2.5.3.8.3 0 0 .1 0 .1 0 7.3-.7 14.7-.9 22-.6.3 0 .7-.1.9-.3.2-.2.4-.6.4-.9C32.9 783.3 32.9 776.2 33 770.3z'/%3E%3Cpath fill='%233675d9' d='M171.1 383.4c1.3-2.5 14.3-22 15.6-21.6.8.3 11.5 21.2 11.5 22.1C198.1 384.2 177.9 384 171.1 383.4zM596.4 711.8c-.1-.1-6.7-8.2-9.7-12.5-.2-.3-.5-1-.7-1.5-.2-.4-.4-.7-.7-.8-.3-.1-.6 0-.8.3L574 712c0 0 0 0 0 0-.2.2-.2.5-.2.9 0 .3.2.7.4.9.1.1 1.8 2.2 2.8 3.1 3.1 3.1 8.8 10.5 8.9 10.6.2.3.5.4.8.4.3 0 .5-.2.6-.5 0 0 1.2-2.8 2-4.1 1.1-1.9 2.3-3.7 3.5-5.5.9-1.4 1.3-1.7 1.7-2 .5-.4 1-.7 2.1-2.4C596.9 713.1 596.8 712.3 596.4 711.8zM727.5 179.9C727.5 179.9 727.5 179.9 727.5 179.9c.6.2 1.3-.2 1.4-.8 0-.1 0-.2 0-.4.2-1.4 2.8-12.6 4.5-19.5.1-.3 0-.6-.2-.8-.2-.3-.5-.4-.8-.5-.2 0-4.7-1.1-5.7-1.3l-13.4-2.7c-.3-.1-.7 0-.9.2-.2.2-.4.4-.5.6 0 0 0 .1 0 .1-.8 6.5-2.2 13.1-3.9 19.4-.1.3 0 .6.2.9.2.3.5.4.8.5C714.8 176.9 721.7 178.5 727.5 179.9zM728.5 178.1c-.1-.1-.2-.2-.4-.2C728.3 177.9 728.4 178 728.5 178.1z'/%3E%3Cg fill-opacity='0.22' fill='%23FFF'%3E%3Cpath d='M699.6 472.7c-1.5 0-2.8-.8-3.5-2.3-.8-1.9 0-4.2 1.9-5 3.7-1.6 6.8-4.7 8.4-8.5 1.6-3.8 1.7-8.1.2-11.9-.3-.9-.8-1.8-1.2-2.8-.8-1.7-1.8-3.7-2.3-5.9-.9-4.1-.2-8.6 2-12.8 1.7-3.1 4.1-6.1 7.6-9.1 1.6-1.4 4-1.2 5.3.4 1.4 1.6 1.2 4-.4 5.3-2.8 2.5-4.7 4.7-5.9 7-1.4 2.6-1.9 5.3-1.3 7.6.3 1.4 1 2.8 1.7 4.3.5 1.1 1 2.2 1.5 3.3 2.1 5.6 2 12-.3 17.6-2.3 5.5-6.8 10.1-12.3 12.5C700.6 472.6 700.1 472.7 699.6 472.7zM740.4 421.4c1.5-.2 3 .5 3.8 1.9 1.1 1.8.4 4.2-1.4 5.3-3.7 2.1-6.4 5.6-7.6 9.5-1.2 4-.8 8.4 1.1 12.1.4.9 1 1.7 1.6 2.7 1 1.7 2.2 3.5 3 5.7 1.4 4 1.2 8.7-.6 13.2-1.4 3.4-3.5 6.6-6.8 10.1-1.5 1.6-3.9 1.7-5.5.2-1.6-1.4-1.7-3.9-.2-5.4 2.6-2.8 4.3-5.3 5.3-7.7 1.1-2.8 1.3-5.6.5-7.9-.5-1.3-1.3-2.7-2.2-4.1-.6-1-1.3-2.1-1.9-3.2-2.8-5.4-3.4-11.9-1.7-17.8 1.8-5.9 5.8-11 11.2-14C739.4 421.6 739.9 421.4 740.4 421.4zM261.3 590.9c5.7 6.8 9 15.7 9.4 22.4.5 7.3-2.4 16.4-10.2 20.4-3 1.5-6.7 2.2-11.2 2.2-7.9-.1-12.9-2.9-15.4-8.4-2.1-4.7-2.3-11.4 1.8-15.9 3.2-3.5 7.8-4.1 11.2-1.6 1.2.9 1.5 2.7.6 3.9-.9 1.2-2.7 1.5-3.9.6-1.8-1.3-3.6.6-3.8.8-2.4 2.6-2.1 7-.8 9.9 1.5 3.4 4.7 5 10.4 5.1 3.6 0 6.4-.5 8.6-1.6 4.7-2.4 7.7-8.6 7.2-15-.5-7.3-5.3-18.2-13-23.9-4.2-3.1-8.5-4.1-12.9-3.1-3.1.7-6.2 2.4-9.7 5-6.6 5.1-11.7 11.8-14.2 19-2.7 7.7-2.1 15.8 1.9 23.9.7 1.4.1 3.1-1.3 3.7-1.4.7-3.1.1-3.7-1.3-4.6-9.4-5.4-19.2-2.2-28.2 2.9-8.2 8.6-15.9 16.1-21.6 4.1-3.1 8-5.1 11.8-6 6-1.4 12 0 17.5 4C257.6 586.9 259.6 588.8 261.3 590.9z'/%3E%3Ccircle cx='1013.7' cy='153.9' r='7.1'/%3E%3Ccircle cx='1024.3' cy='132.1' r='7.1'/%3E%3Ccircle cx='1037.3' cy='148.9' r='7.1'/%3E%3Cpath d='M1508.7 297.2c-4.8-5.4-9.7-10.8-14.8-16.2 5.6-5.6 11.1-11.5 15.6-18.2 1.2-1.7.7-4.1-1-5.2-1.7-1.2-4.1-.7-5.2 1-4.2 6.2-9.1 11.6-14.5 16.9-4.8-5-9.7-10-14.7-14.9-1.5-1.5-3.9-1.5-5.3 0-1.5 1.5-1.5 3.9 0 5.3 4.9 4.8 9.7 9.8 14.5 14.8-1.1 1.1-2.3 2.2-3.5 3.2-4.1 3.8-8.4 7.8-12.4 12-1.4 1.5-1.4 3.8 0 5.3 0 0 0 0 0 0 1.5 1.4 3.9 1.4 5.3-.1 3.9-4 8.1-7.9 12.1-11.7 1.2-1.1 2.3-2.2 3.5-3.3 4.9 5.3 9.8 10.6 14.6 15.9.1.1.1.1.2.2 1.4 1.4 3.7 1.5 5.2.2C1510 301.2 1510.1 298.8 1508.7 297.2zM327.6 248.6l-.4-2.6c-1.5-11.1-2.2-23.2-2.3-37 0-5.5 0-11.5.2-18.5 0-.7 0-1.5 0-2.3 0-5 0-11.2 3.9-13.5 2.2-1.3 5.1-1 8.5.9 5.7 3.1 13.2 8.7 17.5 14.9 5.5 7.8 7.3 16.9 5 25.7-3.2 12.3-15 31-30 32.1L327.6 248.6zM332.1 179.2c-.2 0-.3 0-.4.1-.1.1-.7.5-1.1 2.7-.3 1.9-.3 4.2-.3 6.3 0 .8 0 1.7 0 2.4-.2 6.9-.2 12.8-.2 18.3.1 12.5.7 23.5 2 33.7 11-2.7 20.4-18.1 23-27.8 1.9-7.2.4-14.8-4.2-21.3l0 0C347 188.1 340 183 335 180.3 333.6 179.5 332.6 179.2 332.1 179.2zM516.3 60.8c-.1 0-.2 0-.4-.1-2.4-.7-4-.9-6.7-.7-.7 0-1.3-.5-1.4-1.2 0-.7.5-1.3 1.2-1.4 3.1-.2 4.9 0 7.6.8.7.2 1.1.9.9 1.6C517.3 60.4 516.8 60.8 516.3 60.8zM506.1 70.5c-.5 0-1-.3-1.2-.8-.8-2.1-1.2-4.3-1.3-6.6 0-.7.5-1.3 1.2-1.3.7 0 1.3.5 1.3 1.2.1 2 .5 3.9 1.1 5.8.2.7-.1 1.4-.8 1.6C506.4 70.5 506.2 70.5 506.1 70.5zM494.1 64.4c-.4 0-.8-.2-1-.5-.4-.6-.3-1.4.2-1.8 1.8-1.4 3.7-2.6 5.8-3.6.6-.3 1.4 0 1.7.6.3.6 0 1.4-.6 1.7-1.9.9-3.7 2-5.3 3.3C494.7 64.3 494.4 64.4 494.1 64.4zM500.5 55.3c-.5 0-.9-.3-1.2-.7-.5-1-1.2-1.9-2.4-3.4-.3-.4-.7-.9-1.1-1.4-.4-.6-.3-1.4.2-1.8.6-.4 1.4-.3 1.8.2.4.5.8 1 1.1 1.4 1.3 1.6 2.1 2.6 2.7 3.9.3.6 0 1.4-.6 1.7C500.9 55.3 500.7 55.3 500.5 55.3zM506.7 55c-.3 0-.5-.1-.8-.2-.6-.4-.7-1.2-.3-1.8 1.2-1.7 2.3-3.4 3.3-5.2.3-.6 1.1-.9 1.7-.5.6.3.9 1.1.5 1.7-1 1.9-2.2 3.8-3.5 5.6C507.4 54.8 507.1 55 506.7 55zM1029.3 382.8c-.1 0-.2 0-.4-.1-2.4-.7-4-.9-6.7-.7-.7 0-1.3-.5-1.4-1.2 0-.7.5-1.3 1.2-1.4 3.1-.2 4.9 0 7.6.8.7.2 1.1.9.9 1.6C1030.3 382.4 1029.8 382.8 1029.3 382.8zM1019.1 392.5c-.5 0-1-.3-1.2-.8-.8-2.1-1.2-4.3-1.3-6.6 0-.7.5-1.3 1.2-1.3.7 0 1.3.5 1.3 1.2.1 2 .5 3.9 1.1 5.8.2.7-.1 1.4-.8 1.6C1019.4 392.5 1019.2 392.5 1019.1 392.5zM1007.1 386.4c-.4 0-.8-.2-1-.5-.4-.6-.3-1.4.2-1.8 1.8-1.4 3.7-2.6 5.8-3.6.6-.3 1.4 0 1.7.6.3.6 0 1.4-.6 1.7-1.9.9-3.7 2-5.3 3.3C1007.7 386.3 1007.4 386.4 1007.1 386.4zM1013.5 377.3c-.5 0-.9-.3-1.2-.7-.5-1-1.2-1.9-2.4-3.4-.3-.4-.7-.9-1.1-1.4-.4-.6-.3-1.4.2-1.8.6-.4 1.4-.3 1.8.2.4.5.8 1 1.1 1.4 1.3 1.6 2.1 2.6 2.7 3.9.3.6 0 1.4-.6 1.7C1013.9 377.3 1013.7 377.3 1013.5 377.3zM1019.7 377c-.3 0-.5-.1-.8-.2-.6-.4-.7-1.2-.3-1.8 1.2-1.7 2.3-3.4 3.3-5.2.3-.6 1.1-.9 1.7-.5.6.3.9 1.1.5 1.7-1 1.9-2.2 3.8-3.5 5.6C1020.4 376.8 1020.1 377 1019.7 377zM1329.7 573.4c-1.4 0-2.9-.2-4.5-.7-8.4-2.7-16.6-12.7-18.7-20-.4-1.4-.7-2.9-.9-4.4-8.1 3.3-15.5 10.6-15.4 21 0 1.5-1.2 2.7-2.7 2.8 0 0 0 0 0 0-1.5 0-2.7-1.2-2.7-2.7-.1-6.7 2.4-12.9 7-18 3.6-4 8.4-7.1 13.7-8.8.5-6.5 3.1-12.9 7.4-17.4 7-7.4 18.2-8.9 27.3-10.1l.7-.1c1.5-.2 2.9.9 3.1 2.3.2 1.5-.9 2.9-2.3 3.1l-.7.1c-8.6 1.2-18.4 2.5-24 8.4-3 3.2-5 7.7-5.7 12.4 7.9-1 17.7 1.3 24.3 5.7 4.3 2.9 7.1 7.8 7.2 12.7.2 4.3-1.7 8.3-5.2 11.1C1335.2 572.4 1332.6 573.4 1329.7 573.4zM1311 546.7c.1 1.5.4 3 .8 4.4 1.7 5.8 8.7 14.2 15.1 16.3 2.8.9 5.1.5 7.2-1.1 2.7-2.1 3.2-4.8 3.1-6.6-.1-3.2-2-6.4-4.8-8.3C1326.7 547.5 1317.7 545.6 1311 546.7z'/%3E%3C/g%3E%3C/svg%3E");
+      background-attachment: fixed;
+    }
+    #track {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      padding: 0.5rem 0;
+      box-shadow: 0.5px 1px 6px black;
+    }
+    .res {
+      margin: 5rem 0 !important;
+    }
+    #catg {
+      user-select: none;
+    }
+    #start {
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    .fa-arrow-circle-right{
+      transition: transform ease-in-out 300ms;
+    }
+    #start:hover .fa-arrow-circle-right{
+      transform: translateX(2.5px);
+    }
+    .nav_buttons {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+    #submit {
+      display: none;
+    }
+
+    .btn:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    .close:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    .toast-cont {
+      display: none;
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 10;
+    }
+
+    .test{
+      display: none;
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 10;
+    }
+  </style>
+  <body class="m-2">
+    <div class="bg-secondary rounded-bottom ml-2 mr-2" id="track"></div>
+    <div class="res h-auto m-2">
+      <h2 class="text-center text-white">
+        <img
+          src="./img/trophy.png"
+          alt="quiz"
+          style="height: 100px; width: 100px"
+        />
+        <br />
+        Take a quiz and test your knowledge.
+      </h2>
+
+      <br />
+      <div
+        class="
+          d-flex
+          flex-column flex-sm-row
+          justify-content-evenly
+          align-items-center
+        "
+      >
+        <button
+          class="btn btn-secondary m-2"
+          id="catg-select-btn"
+          data-toggle="collapse"
+          data-target="#catg"
+          >
+          Select topic <i class="fas fa-caret-down fa-md"></i>
+        </button>
+
+        <span class="text-white">
+          <i class="fas fa-check-double fa-md"></i> Selected
+          <span id="selected_catg" class="text-white badge badge-info"
+            >None</span
+          ></span
+        >
+      </div>
+
+      <div
+        id="catg"
+        class="collapse bg-light text-dark m-2 p-2 text-center rounded"
+      ></div>
+      <br />
+      <button type="button" class="btn btn-primary" id="start">
+        Take Quiz <i class="fas fa-arrow-circle-right"></i>
+      </button>
+    </div>
+    <div class="nav_buttons m-2 h-auto">
+      <button type="button" class="btn btn-primary" id="previous">
+        <i class="fas fa-arrow-left"></i> Previous
+      </button>
+      <button type="button" class="btn btn-primary" id="next">
+        Next <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <div class="toast-cont">
+      <div class="toast" data-autohide="false">
+        <div class="toast-header">
+          <strong class="mr-auto text-primary">Note</strong>
+          <small class="text-muted">1 mins ago</small>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+            &times;
+          </button>
+        </div>
+        <div class="toast-body">
+          Once you go to the next question, you can view the answers to the
+          previous questions.
+        </div>
+      </div>
+    </div>
+
+    <span class="test badge badge-info text-white p-1" style="font-size: 20px;">
+        <input
+          id="minutes"
+          type="text"
+          readonly
+          style="
+            background: transparent;
+            text-align: right;
+            width: 2rem;
+            border: none;
+            outline: none;
+            color: white;
+          "
+        />
+        <span>:</span>
+        <input
+          id="seconds"
+          type="text"
+          readonly
+          style="
+            background: transparent;;
+            text-align: left;
+            width: 2rem;
+            border: none;
+            outline: none;
+            color: white;
+          "
+        />
+    </span>
+  </body>
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    const track = document.getElementById("track");
+    const resultDiv = document.querySelector(".res");
+    const nextBtn = document.getElementById("next");
+    const prevBtn = document.getElementById("previous");
+    const categories = document.querySelector("#catg");
+
+    var i = 0;
+
+    var amount = 15;
+
+    var category_url = null;
+
+    let spinner = `
+        <div class="card h-auto bg-dark text-white">
+            <div class=' card-header text-center bg-secondary w-100'>Loading...</div>
+                <div class="card-body text-center">
+                    <div class="spinner-border text-primary"></div>
+                </div>
+            </div>
+        `;
+
+    $("#start").click(function () {
+      getData();
+      $(".nav_buttons").css("display", "block");
+      document.getElementById("track").innerHTML = `
+            <div class="progress m-2">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"></div>
+            </div>
+          `;
+          
+          $('.test').css("display","inline-block"); //showing timer   
+          countdown(); //calling timer
+          $( ".test" ).appendTo( $(body)); //add timer to body
+
+      setTimeout(function () {
+        $(".toast").css("display", "block");
+        $(".toast").toast("show");
+      }, 2000);
+
+      setTimeout(function () {
+        $(".toast").toast("hide");
+        $(".toast").css("display", "none");
+      }, 10000);
+    });
+
+    function shuffleArray(array) {
+      var currentIndex = array.length,
+        randomIndex;
+
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex],
+          array[currentIndex],
+        ];
+      }
+
+      return array;
+    }
+
+    function getData() {
+      resultDiv.innerHTML = spinner;
+      fetch(
+        "https://opentdb.com/api.php?amount=" +
+          amount +
+          "&category=" +
+          category_url +
+          ""
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          function showData(i) {
+            var incorrectAns = data.results[i].incorrect_answers;
+            var correctAns = data.results[i].correct_answer;
+            var options = incorrectAns.concat(correctAns);
+
+            var sno = i + 1;
+            function iterateOptions(value, index, array) {
+              return (
+                `
+                    <label id='l_opt${index}' for='opt${index}'>
+                    <input type="checkbox" name="options" id='opt${index}' class="check" value="${index}">
+                    ${value}
+                    </label>
+                    ` + `<br><hr>`
+              );
+            }
+            $(document).ready(function () {
+              $(".check").click(function () {
+                $(".check").not(this).prop("checked", false);
+                //$(".check").not(this).parent().removeClass("fas");
+              });
+              var count = 0;
+              $(".check").click(function () {
+                //console.log('Marked: ' +this.value);
+                //console.log('Answer: '+options.indexOf(correctAns));
+                if (
+                  $(this).is(":checked") &&
+                  this.value == options.indexOf(correctAns)
+                ) {
+                  ++count;
+                  if (count == 1) {
+                    //$(this).before('correct');
+                    $(this)
+                      .parent()
+                      .html(
+                        `&nbsp; <i class='fas fa-check fa-lg' style=color:green;></i>`
+                      )
+                      .append("&nbsp;" + `<span>${options[this.value]}<span>`);
+                    console.log("correct");
+                  }
+                } else if (
+                  $(this).is(":checked") &&
+                  this.value != options.indexOf(correctAns)
+                ) {
+                  // $(this).before('Incorrect');
+                  $(this)
+                    .parent()
+                    .html(
+                      `&nbsp; <i class='fas fa-times fa-lg' style=color:red;></i>`
+                    )
+                    .append("&nbsp;" + `<span>${options[this.value]}<span>`);
+                  console.log("incorrect");
+                }
+              });
+            });
+            resultDiv.innerHTML = `
+                        <div class="card h-auto bg-dark text-white">
+                            <div class='card-header bg-primary w-100 d-flex flex-column d-sm-flex flex-sm-row justify-content-between align-items-center'>
+                                <h3 class='d-flex align-items-baseline'>
+
+                                  <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" title='Leave Quiz'>
+                                      <i class='fas fa-home fa-lg'></i>
+                                  </button>
+
+                                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content bg-dark">
+                                              <div class="modal-header">
+                                                <h4 class="modal-title text-danger" id="exampleModalLabel">
+                                                  <i class='fas fa-exclamation-triangle'></i>
+                                                  Warning</h4>
+                                                <button type="button" class="close shadow-none" data-dismiss="modal" aria-label="Close">
+                                                  <i class='fas fa-times shadow-none '></i>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body text-white small">
+                                                Are you sure you want to leave the quiz?
+                                                <br>
+                                                You won't be able to continue later.
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">No, Stay</button>
+                                                <a href='./index.html' class="btn btn-danger">Yes, Quit</a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
+
+                                  &nbsp;
+                                  <p class='text-center'>Quiz - ${
+                                    data.results[i].category
+                                  }</p>
+                                </h3>
+                                <p>Questions: ${amount}</p>
+                            </div>
+                            <div class="card-body">
+                                <h2 class='text-info'>
+                                    <div class='card-title'>
+
+                                        <span class="small d-flex justify-content-between align-items-center">
+                                          <p class='text-baseline'><u><b>Ques ${sno}</b></u></p>
+                                          &nbsp;
+                                          <kbd title="Difficulty">${
+                                            data.results[i].difficulty
+                                          }</kbd>
+                                        </span>
+                                        <br>
+                                        <h3 class='text-white'> ${
+                                          data.results[i].question
+                                        } </h3>
+                                    </div>
+                                </h2>
+                                <hr>
+                                <p class='card-text d-flex  align-items:center' id="options">
+                                  <span> ${shuffleArray(options)
+                                    .map(iterateOptions)
+                                    .join("")} </span>
+                                </p>
+                            </div>
+                            <br>
+                            <button class="btn btn-success" id="submit">Submit</button>
+                        </div>
+                        `;
+            if (i >= amount - 1) {
+              $("#submit").css("display", "block");
+            }
+          }
+
+          showData(i);
+
+          function showAttemptedData(i) {
+            var sno = i + 1;
+            resultDiv.innerHTML = `
+                        <div class="card h-auto bg-dark text-white">
+                            <div class='card-header bg-primary w-100 d-flex justify-content-between align-items-center'>
+                                <h3>Quiz - ${data.results[i].category}</h3>
+                                <p>Questions: ${amount}</p>
+                            </div>
+                            <div class="card-body">
+                                <h2 class='text-info'>
+                                    <div class='card-title'>
+
+                                        <span class="small d-flex justify-content-between align-items-center">
+                                          <p class='text-baseline'><u><b>Ques ${sno}</b></u></p>
+                                          &nbsp;
+                                          <kbd>${data.results[i].difficulty}</kbd>
+                                        </span>
+                                        <br>
+                                        <h3 class='text-white'> ${data.results[i].question} </h3>
+                                    </div>
+                                </h2>
+                                <hr>
+                                <p class='card-text d-flex  align-items:center' id="options">
+                                  <span><i class='fas fa-check fa-lg text-success'></i> Ans. <span class='text-success'>${data.results[i].correct_answer}</span></span>
+                                </p>
+                            </div>
+                            <br>
+                            <button class="btn btn-success" id="submit">Submit</button>
+                        </div>
+                        `;
+          }
+
+          var counter = 0;
+
+          $("#next").click(function () {
+            $("#previous").removeAttr("disabled");
+            $("#previous").removeClass("btn-danger");
+            if (i >= amount - 1) {
+              const alertEnd = `<div class=" position-relative alert alert-success alert-dismissible fade show m-2 mt-5" role="alert">
+                                        <strong>Well done!</strong> You have reached the end of the quiz.
+                                        <button type="button" class="close" data-dismiss="alert"><i class='fas fa-times-circle'></i></button>
+                                    </div>`;
+
+              counter++;
+              if (counter == 1) {
+                $("body").prepend(alertEnd);
+                $("#next").attr("disabled", "disabled");
+                $("#next").addClass("btn-danger");
+              }
+            } else {
+              showData(++i);
+            }
+            $(".progress-bar").css("width", (100 / amount) * (i + 1) + "%");
+          });
+
+          $("#previous").click(function () {
+            $("#next").removeAttr("disabled");
+            $("#next").removeClass("btn-danger");
+            counter = 0;
+            $(".alert-success").remove();
+            if (i <= 0) {
+              $(this).attr("disabled", "disabled");
+              $(this).addClass("btn-danger");
+            } else {
+              showAttemptedData(--i);
+              $(".progress-bar").css("width", -100 / amount + "%");
+            }
+          });
+
+          //console.log(data.results);
+        })
+        .catch((err) => {
+          console.error(err);
+          resultDiv.innerHTML = `
+
+              <div class="card h-auto bg-dark text-white">
+                <div class=' card-header text-center bg-secondary w-100'>
+                  <div class='d-flex align-items-center justify-content-start'>
+                    <a href='./index.html' class='text-dark'><h3><i class='fas fa-arrow-circle-left fa-lg'></i></h3></a>
+                    &nbsp;
+                    <h3 class='text-danger'>Please select a topic</h3>
+                  </div>
+                </div>
+                <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
+                  <i class='fas fa-exclamation-triangle fa-md' style='color:red;'><h2 style="color:grey;font-size:large;">Error 404</h2></i>
+                  <img src='./img/empty.gif' alt='empty' style="height:250px; width:250px;">
+                  <p>Looks like you haven't selected any topic for the quiz.</p>
+                </div>
+            </div>
+              `;
+        });
+    }
+
+    function getCategories() {
+      // categories.innerHTML =`<div class="spinner-border text-dark"></div>`;
+      fetch("https://opentdb.com/api_category.php")
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          categories.innerHTML = `
+              <h3 class="text-primary">Select a topic for the quiz.<br /></h3>
+              <button
+              id="catg-submit"
+              data-toggle="collapse"
+              data-target="#catg"
+              class="btn btn-success"
+              >
+              Select
+              </button>
+              <br/><br/>
+              `;
+          const categoriesObj = data.trivia_categories;
+
+          categoriesObj.forEach(myFunction);
+
+          function myFunction(item, index) {
+            categories.innerHTML += `
+                &nbsp;
+                <label class='badge badge-dark catg-label-badge pr-4 large' for='catg${item.id}'>
+                  <input type="radio" name="catg" class="m-4 catg" id='catg${item.id}' value="${item.id}">${item.name}
+                  </label>
+
+              `;
+          }
+          $("#catg-submit").click(function () {
+            var catg = $("input[type='radio']:checked").val();
+            //var category_url=sessionStorage.setItem('cat-url',catg);
+            category_url = catg;
+            var label = $(
+              "label[for='" + $("input[type='radio']:checked").attr("id") + "']"
+            );
+            document.getElementById("selected_catg").innerHTML =
+              label[0].outerText;
+          });
+          $(".catg-label-badge").click(function () {
+            $(this).removeClass("badge-dark");
+            $(this).addClass("badge-info");
+          });
+          $(".catg-label-badge").focusout(function () {
+            $(this).removeClass("badge-info");
+            $(this).addClass("badge-dark");
+          });
+          //console.log(data.trivia_categories);
+        })
+        .catch((err) => {
+          console.error(err);
+          resultDiv.innerHTML = `<i class='fas fa-exclamation-triangle' style='color:red;'><p style="color:grey;font-size:large;">Error 404</p></i>`;
+        });
+    }
+
+    $("#catg-select-btn").click(function () {
+      $("#catg-select-btn i").toggleClass('fa-caret-up')
+      categories.innerHTML = `<div class="spinner-border text-dark"></div><span><h3>Loading...</h3></span>`;
+      getCategories();
+    });
+
+
+  
+    //set minutes
+    var mins = 0;
+
+    //calculate the seconds
+    var secs = mins * 60;
+
+    //countdown function is evoked when page is loaded
+    function countdown() {
+      setTimeout("Decrement()", 60);
+    }
+
+    //Decrement function decrement the value.
+    function Decrement() {
+      if (document.getElementById) {
+        minutes = document.getElementById("minutes");
+        seconds = document.getElementById("seconds");
+
+        //if less than a minute remaining
+        //Display only seconds value.
+        if (seconds < 59) {
+          seconds.value = secs;
+        }
+
+        //Display both minutes and seconds
+        //getminutes and getseconds is used to
+        //get minutes and seconds
+        else {
+          minutes.value = getminutes();
+          seconds.value = getseconds();
+        }
+        //when less than a minute remaining
+        //colour of the minutes and seconds
+        //changes to red
+        if (secs < 10) {
+          seconds.value = '0'+seconds.value;
+        }
+        if (mins < 10) {
+          minutes.value = '0'+minutes.value;
+        }
+        //if seconds becomes zero,
+        //then page alert time up
+        if (mins < 0) {
+          alert("time up");
+          minutes.value = 0;
+          seconds.value = 0;
+        }
+        //if seconds > 0 then seconds is decremented
+        else {
+          secs++;
+          setTimeout("Decrement()", 1000);
+        }
+      }
+    }
+
+    function getminutes() {
+      //minutes is seconds divided by 60, rounded down
+      mins = Math.floor(secs / 60);
+      return mins;
+    }
+
+    function getseconds() {
+      //take minutes remaining (as seconds) away
+      //from total seconds remaining
+      return secs - Math.round(mins * 60);
+    }
+
+    
+  </script>
+</html>
